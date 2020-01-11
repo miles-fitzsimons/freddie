@@ -1,51 +1,52 @@
 (ns freddie.core
   (:require
-    [clj-http.client :as client]))
+    [clj-http.client :as c]))
 
 
-(def auth-token "fake-news")
-(def artist-id "0Y4inQK6OespitzD6ijMwb")
-(def playlist-id "you-can-find-it")
+(def auth-token "")
+(def artist-id "")
+(def playlist-id "")
+(def options {:headers {:Authorization (str "Bearer " auth-token)}
+              :as      :json})
 
-
-(defn get-related-artists []
-  (->> (client/get
+(defn get-related-artists
+  []
+  (->> (c/get
          (str "https://api.spotify.com/v1/artists/"
               artist-id
               "/related-artists")
-         {:headers {:Authorization (str "Bearer " auth-token)}
-          :as      :json})
+         options)
        :body
        :artists
-       (map #(:id %))))
+       (map :id)))
 
 
-(defn get-related-artist-songs
+(defn get-artist-songs
   [id]
-  (->> (client/get
+  (->> (c/get
          (str "https://api.spotify.com/v1/artists/"
               id
               "/top-tracks?country=US")
-         {:headers {:Authorization (str "Bearer " auth-token)}
-          :as      :json})
+         options)
        :body
        :tracks
-       (map #(:id %))))
+       (map :id)))
 
 
 (defn get-all-related-songs
   []
-  (flatten (for [id (get-related-artists)]
-             (get-related-artist-songs id))))
+  (-> (for [id (get-related-artists)]
+        (get-artist-songs id))
+      flatten
+      shuffle))
 
 
 (defn update-playlist
   []
   (for [song-id (get-all-related-songs)]
-    (client/post
+    (c/post
       (str "https://api.spotify.com/v1/playlists/"
            playlist-id
-           "/tracks?uris="
-           (str "spotify:track:" song-id))
-      {:headers {:Authorization (str "Bearer " auth-token)}
-       :as      :json})))
+           "/tracks?uris=spotify:track:"
+           song-id)
+      options)))

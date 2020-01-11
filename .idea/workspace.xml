@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ae13c75-bae0-42c0-9592-15b7f686de79" name="Default Changelist" comment="" />
+    <list default="true" id="9ae13c75-bae0-42c0-9592-15b7f686de79" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/freddie/core.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/freddie/core.clj" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1WFDG8Ka4zcz2lAxS4ldjIPRm3m" />
-  <component name="ReplState" timestamp="1578741992259">{:repl-history {:ide [], :local [{:command &quot;:fd&quot;, :offset 3, :ns &quot;freddie.core&quot;} {:command &quot;(get-related-artists)&quot;, :offset 20, :ns &quot;freddie.core&quot;} {:command &quot;(get-related-artist-songs \&quot;7BMccF0hQFBpP6417k1OtQ\&quot;)&quot;, :offset 49, :ns &quot;freddie.core&quot;} {:command &quot;(defn get-all-related-songs\n  []\n  (for [related-artists (get-related-artists)]\n    related-artists))&quot;, :offset 99, :ns &quot;freddie.core&quot;} {:command &quot;(get-all-related-songs)&quot;, :offset 22, :ns &quot;freddie.core&quot;} {:command &quot;(defn get-all-related-songs\n  []\n  (for [related-artist (get-related-artists)]\n    (get-related-artist-songs related-artist)))&quot;, :offset 123, :ns &quot;freddie.core&quot;}], :remote []}}</component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="ReplState" timestamp="1579164282065">{:repl-history {:ide [], :local [{:command &quot;:fd&quot;, :offset 3, :ns &quot;freddie.core&quot;} {:command &quot;(get-related-artists)&quot;, :offset 20, :ns &quot;freddie.core&quot;} {:command &quot;(get-related-artist-songs \&quot;7BMccF0hQFBpP6417k1OtQ\&quot;)&quot;, :offset 49, :ns &quot;freddie.core&quot;} {:command &quot;(defn get-all-related-songs\n  []\n  (for [related-artists (get-related-artists)]\n    related-artists))&quot;, :offset 99, :ns &quot;freddie.core&quot;} {:command &quot;(get-all-related-songs)&quot;, :offset 22, :ns &quot;freddie.core&quot;} {:command &quot;(defn get-all-related-songs\n  []\n  (for [related-artist (get-related-artists)]\n    (get-related-artist-songs related-artist)))&quot;, :offset 123, :ns &quot;freddie.core&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -74,5 +84,18 @@
       <updated>1578736350968</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
